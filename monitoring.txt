@@ -1,0 +1,4 @@
+#!/bin/bash
+
+tram=$(free --mega | awk '$1 == "Mem:" {print $2}')
+uram=$(free --mega | awk '$1 == "Mem:" {print $3}')
