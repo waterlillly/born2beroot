@@ -2,3 +2,12 @@
 
 tram=$(free --mega | awk '$1 == "Mem:" {print $2}')
 uram=$(free --mega | awk '$1 == "Mem:" {print $3}')
+pram=$(free --mega | awk '$1 == "Mem:" {printf("(%.2f%%)\n)", (uram/tram*100)')
+
+
+wall=
+        #ARCHITECTURE: $(uname -a)
+        #CPU (physical cores): $(grep "physical id" /proc/cpuinfo | wc -l)
+        #CPU (virtual cores): $(grep "processor" /proc/cpuinfo | wc -l)
+        #MEMORY USAGE: $(free --mega | awk '$1 == "Mem:" {printf("(%.2f%%)\n", $3/$2*100)}')
+         
